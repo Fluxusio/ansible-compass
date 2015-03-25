@@ -1,0 +1,17 @@
+---
+- name: Install Compass dependencies
+  apt: pkg={{ item }} state=present
+  with_items:
+      - ruby
+  sudo: yes
+
+- name: Check for Compass
+  stat:
+    path=/usr/local/bin/compass
+  register: compass_installed
+
+- name: Install Compass
+  command: gem install compass --version 1.0.1
+  sudo: yes
+  when: not compass_installed.stat.exists
+

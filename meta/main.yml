@@ -1,0 +1,12 @@
+---
+galaxy_info:
+  author: Chris How Kin Sang
+  description: Ansible role for installing Compass
+  license: MIT
+  min_ansible_version: 1.4
+  platforms:
+    - Ubuntu 14.04
+  categories:
+    - development
+
+dependencies: []
